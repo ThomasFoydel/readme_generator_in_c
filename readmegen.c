@@ -51,7 +51,7 @@ int main(int argc, char *argv[]) {
 	strncat(formattedTotal, responses[0],100);
 	strncat(formattedTotal, "\n", 2);
 	// table of contents
-	strncat(formattedTotal, "## Table of Contents\n[Description](#Description)\n[Installation](#Installation)\n[Usage](#Usage)\n[License](#License)\n[Questions](#Questions)\n<br/>\n\n",175);
+	strncat(formattedTotal, "## Table of Contents\n- [Description](#Description)\n- [Installation](#Installation)\n- [Usage](#Usage)\n- [License](#License)\n-[Questions](#Questions)\n\n\n",175);
 	// description
 	strncat(formattedTotal, "## Description\n",16);
 	strncat(formattedTotal, responses[1],253);
