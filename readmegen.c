@@ -40,7 +40,7 @@ int main(int argc, char * argv[]) {
 
   // get user input
   for (int i = 0; i < 7; i++) {
-    printf(questionsList[i]);
+    printf("%s", questionsList[i]);
     fgets(responses[i], 253, stdin);
   }
 
