@@ -2,11 +2,11 @@
 
 ## Table of Contents
 
-[Description](#Description)
-[Installation](#Installation)
-[Usage](#Usage)
-[License](#License)
-[Questions](#Questions)
+- [Description](#Description)
+- [Installation](#Installation)
+- [Usage](#Usage)
+- [License](#License)
+- [Questions](#Questions)
 
 ## Description
 
