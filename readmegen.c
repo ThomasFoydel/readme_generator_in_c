@@ -90,12 +90,12 @@ int main(int argc, char * argv[]) {
   strncat(formattedTotal, "## More Of My Projects\nFind more of my work on [my GitHub](https://github.com/", 85);
   strncat(formattedTotal, responses[6], 40);
   strncat(formattedTotal, ")\n", 3);
-  
+
   // write the file
   write(fd, formattedTotal, 1000);
 
   //check to make sure file was created
-  fd = open("README.txt", O_RDONLY);
+  fd = open("README.md", O_RDONLY);
   if (fd == -1) {
     printf("ERROR: Failed to open and read file.\n");
     exit(1);
