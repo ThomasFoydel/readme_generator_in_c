@@ -42,6 +42,7 @@ int main(int argc, char * argv[]) {
   for (int i = 0; i < 7; i++) {
     printf("%s", questionsList[i]);
     fgets(responses[i], 253, stdin);
+	system("clear");
   }
 
   // format input into markdown
