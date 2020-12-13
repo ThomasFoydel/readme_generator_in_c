@@ -62,7 +62,7 @@ int main(int argc, char * argv[]) {
   strncat(formattedTotal, "\n", 2);
   // usage
   strncat(formattedTotal, "## Usage\n", 11);
-  strncat(formattedTotal, responses[2], 253);
+  strncat(formattedTotal, responses[3], 253);
   strncat(formattedTotal, "\n", 2);
   // license
   strncat(formattedTotal, "## License\n", 12);
