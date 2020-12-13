@@ -18,8 +18,8 @@ void trim(char * s) {
 int main(int argc, char * argv[]) {
   // create file
   int fd;
-  char buf[254];
-  fd = open("README.txt", O_CREAT | O_WRONLY, 0600);
+  char buf[4096];
+  fd = open("README.md", O_CREAT | O_WRONLY, 0600);
   if (fd == -1) {
     printf("ERROR: file create/open error.\n");
     exit(1);
@@ -100,10 +100,10 @@ int main(int argc, char * argv[]) {
     printf("ERROR: Failed to open and read file.\n");
     exit(1);
   }
-  read(fd, buf, 253);
-  // buf[253] = '\0';
+  read(fd, buf, 4096);
+  buf[4095] = '\0';
   close(fd);
-  //printf("buf: %s\n", buf);
+  printf("buf: %s\n", buf);
 
   return 0;
 }

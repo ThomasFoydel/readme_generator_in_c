@@ -5,8 +5,7 @@
 - [Description](#Description)
 - [Installation](#Installation)
 - [Usage](#Usage)
-- [License](#License)
-- [Questions](#Questions)
+- [License](#License) -[Questions](#Questions)
 
 ## Description
 
@@ -18,11 +17,11 @@ Download it, compile it (you need gcc or something equivalent installed)
 
 ## Usage
 
-Run the command ./a.out and then input your app's information to the prompts
+Run the command `./a.out` then answer the prompts with your app's information
 
 ## License
 
-![License](https://img.shields.io/badge/license-Apache%202.0-blue)
+![License](https://img.shields.io/badge/license-GNU%20GPLv3-blue)
 
 ## Questions
 
