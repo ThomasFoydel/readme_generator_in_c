@@ -47,27 +47,34 @@ int main(int argc, char * argv[]) {
 
   // format input into markdown
   // title
-  strncat(formattedTotal, "# ", 3);
+  strncat(formattedTotal, "<h1 align='center'>", 21);
   strncat(formattedTotal, responses[0], 100);
-  strncat(formattedTotal, "\n", 2);
+  strncat(formattedTotal, "</h1>\n", 7);
   // table of contents
-  strncat(formattedTotal, "## Table of Contents\n- [Description](#Description)\n- [Installation](#Installation)\n- [Usage](#Usage)\n- [License](#License)\n-[Questions](#Questions)\n\n\n", 175);
+  strncat(formattedTotal, "<p align='center'><a href='#description'>Description</a></p><p align='center'><a href='#installation'>Installation</a></p><p align='center'><a href='#usage'>Usage</a></p><p align='center'><a href='#license'>License</a></p><p align='center'><a href='#questions'>Questions</a></p>\n\n\n", 400);
   // description
-  strncat(formattedTotal, "## Description\n", 16);
+  strncat(formattedTotal, "<h2 align='center'>Description</h2>\n", 37);
+  strncat(formattedTotal, "<p align='center'>", 19);
   strncat(formattedTotal, responses[1], 253);
+  strncat(formattedTotal, "</p>", 5);
   strncat(formattedTotal, "\n", 2);
   // installation
-  strncat(formattedTotal, "## Installation\n", 17);
+  strncat(formattedTotal, "<h2 align='center'>Installation</h2>\n", 38);
+  strncat(formattedTotal, "<p align='center'>", 19);
   strncat(formattedTotal, responses[2], 253);
+  strncat(formattedTotal, "</p>", 5);
   strncat(formattedTotal, "\n", 2);
   // usage
-  strncat(formattedTotal, "## Usage\n", 11);
+  strncat(formattedTotal, "<h2 align='center'>Usage</h2>\n", 31);
+  strncat(formattedTotal, "<p align='center'>", 19);
   strncat(formattedTotal, responses[3], 253);
+  strncat(formattedTotal, "</p>", 5);
   strncat(formattedTotal, "\n", 2);
-  // license
-  strncat(formattedTotal, "## License\n", 12);
-  strncat(formattedTotal, "![License](https://img.shields.io/badge/license-", 49);
 
+  // license
+  strncat(formattedTotal, "<h2 align='center'>License</h2>\n", 33);
+  strncat(formattedTotal, "<p align='center'>", 19);
+  strncat(formattedTotal, "<img src='https://img.shields.io/badge/license-", 48);
   char apacheLic[11] = "Apache 2.0";
   char gnuLic[10] = "GNU GPLv3";
   trim(responses[4]);
@@ -80,31 +87,27 @@ int main(int argc, char * argv[]) {
   } else {
     strncat(formattedTotal, responses[4], 40);
   }
-  strncat(formattedTotal, "-blue)\n\n", 10);
+  strncat(formattedTotal, "-blue' alt='license'></img>", 28);
+  strncat(formattedTotal, "</p>\n", 6);
+
   // questions
-  strncat(formattedTotal, "## Questions\n", 14);
+  strncat(formattedTotal, "<h2 align='center'>Questions</h2>\n", 35);
+  strncat(formattedTotal, "<p align='center'>", 19);
   strncat(formattedTotal, "Any questions on this or other projects can be directed to ", 64);
   strncat(formattedTotal, responses[5], 253);
-  strncat(formattedTotal, "\n", 2);
+  strncat(formattedTotal, "</p>", 5);
+  strncat(formattedTotal, "\n", 2); 
   // github
   trim(responses[6]);
-  strncat(formattedTotal, "## More Of My Projects\nFind more of my work on [my GitHub](https://github.com/", 85);
+  strncat(formattedTotal, "<h2 align='center'>More Of My Projects</h2>\n", 45);
+  strncat(formattedTotal, "<p align='center'>Find more of my work on <a href='https://github.com/", 71);
   strncat(formattedTotal, responses[6], 40);
-  strncat(formattedTotal, ")\n", 3);
+  strncat(formattedTotal, "'>my GitHub</a></p>\n", 21);
 
   // write the file
-  write(fd, formattedTotal, 1000);
+  write(fd, formattedTotal, strlen(formattedTotal));
 
-  //check to make sure file was created
-  fd = open("README.md", O_RDONLY);
-  if (fd == -1) {
-    printf("ERROR: Failed to open and read file.\n");
-    exit(1);
-  }
-  read(fd, buf, 4096);
-  buf[4095] = '\0';
-  close(fd);
-  printf("buf: %s\n", buf);
+  printf("File printed to README.md \ntotal length is %lu\n", strlen(formattedTotal));
 
   return 0;
 }
