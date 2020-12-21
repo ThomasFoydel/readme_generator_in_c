@@ -9,7 +9,7 @@
 <h2 align='center'>Installation</h2>
 <p align='center'>Download it, compile the readmegen.c file, you need gcc or something equivalent, with gcc installed, open terminal and cd to the folder that contains readmegen.c and use the command</p>
 <p align='center'><strong>gcc readmegen.c</strong></p>
-<p align='center'>to compile it into an executable file named <stong>a.out</strong></p>
+<p align='center'>to compile it into an executable file named <strong>a.out</strong></p>
 <p align='center'>a compiled and executable file with this name is also included in this repo if you don't want to compile it yourself</p>
 <h2 align='center'>Usage</h2>
 <p align='center'>Run the command</p>
