@@ -9,12 +9,12 @@
 <p align='center'>Download it, compile the readmegen.c file, you need gcc or something equiva
 </p>
 <h2 align='center'>Usage</h2>
-<p align='center'>Run the command `./a.out` then answer the prompts with your app's information
+<p align='center'>Run the command ```./a.out``` then answer the prompts with your app's information
 </p>
-<p align='center'>If you supply an argument after a.out, like `./a.out MYREADME.md` then it will write a file with that argument as its name
+<p align='center'>If you supply an argument after a.out, like ```./a.out MYREADME.md``` then it will write a file with that argument as its name
 </p>
 <p align='center'>
-If no argument is provided, the default of `README.md` will be used
+If no argument is provided, the default of ```README.md``` will be used
 </p>
 <h2 align='center'>License</h2>
 <p align='center'><img src='https://img.shields.io/badge/license-MIT-blue' alt='license'></img></p>
