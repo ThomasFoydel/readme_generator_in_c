@@ -20,7 +20,6 @@ int main(int argc, char * argv[]) {
   int fd;
   char buf[4096];
 
-  printf("argc: %d\n", argc);
   if (argc > 1){
     fd = open(argv[1], O_CREAT | O_WRONLY, 0600);
   } else {
@@ -114,7 +113,13 @@ int main(int argc, char * argv[]) {
   // write the file
   write(fd, formattedTotal, strlen(formattedTotal));
 
-  printf("File printed to README.md \ntotal length is %lu\n", strlen(formattedTotal));
+  printf("Total length: %lu characters. ", strlen(formattedTotal));
+
+  if (argc > 1){
+    printf("File printed to %s \n", argv[1]);
+  } else {
+    printf("File printed to README.md \n");
+  }
 
   return 0;
 }
