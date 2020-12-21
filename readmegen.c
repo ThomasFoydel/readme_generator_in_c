@@ -19,7 +19,14 @@ int main(int argc, char * argv[]) {
   // create file
   int fd;
   char buf[4096];
-  fd = open("README.md", O_CREAT | O_WRONLY, 0600);
+
+  printf("argc: %d\n", argc);
+  if (argc > 1){
+    fd = open(argv[1], O_CREAT | O_WRONLY, 0600);
+  } else {
+    fd = open("README.md", O_CREAT | O_WRONLY, 0600);
+  }
+
   if (fd == -1) {
     printf("ERROR: file create/open error.\n");
     exit(1);
