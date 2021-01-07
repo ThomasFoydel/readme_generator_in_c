@@ -93,8 +93,35 @@ int main(int argc, char * argv[]) {
   } else {
     strncat(formattedTotal, responses[4], 40);
   }
-  strncat(formattedTotal, "-blue' alt='license'></img>", 28);
-  strncat(formattedTotal, "</p>\n", 6);
+
+  // badge color
+  char *lic = responses[4];
+  char *mitCheck = "MIT";
+  char *apacheCheck = "Apache";
+  char *gnuCheck = "GNU";
+  char *iscCheck = "ISC";
+  if (argv[2]) {
+     strncat(formattedTotal, "-", 2);
+     strncat(formattedTotal, argv[2], 10);
+     strncat(formattedTotal, "'", 2);
+  }
+  else if (strcasestr(lic, mitCheck) != NULL) {
+    strncat(formattedTotal, "-yellow'", 9);
+  } 
+  else if (strcasestr(lic, apacheCheck) != NULL) {
+    strncat(formattedTotal, "-yellowgreen'", 14);
+  }
+  else if (strcasestr(lic, gnuCheck) != NULL) {
+    strncat(formattedTotal, "-blue'", 7);
+  } 
+  else if (strcasestr(lic, iscCheck) != NULL) {
+    strncat(formattedTotal, "-red'", 6);
+  }
+  else {
+    strncat(formattedTotal, "-9cf'", 6);
+  }
+  strncat(formattedTotal, " alt='license'></img>", 22);
+  
 
   // questions
   strncat(formattedTotal, "<h2 align='center'>Questions</h2>\n", 35);
