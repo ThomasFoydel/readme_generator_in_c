@@ -4,6 +4,7 @@
 <p align='center'><a href='#usage'>Usage</a></p>
 <p align='center'><a href='#license'>License</a></p>
 <p align='center'><a href='#questions'>Questions</a></p>
+<p align='center'><img src="screencapture.gif" alt="A screenshot of the project in VS code and a terminal window"></p>
 <h2 align='center'>Description</h2>
 <p align='center'>A command line interface tool for generating nice good looking README files</p>
 <h2 align='center'>Installation</h2>
