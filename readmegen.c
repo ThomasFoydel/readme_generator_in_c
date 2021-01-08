@@ -18,7 +18,7 @@ void trim(char * s) {
 int main(int argc, char * argv[]) {
   // create file
   int fd;
-  char buf[4096];
+  char buf[8190];
 
   if (argc > 1){
     fd = open(argv[1], O_CREAT | O_WRONLY, 0600);
@@ -31,7 +31,7 @@ int main(int argc, char * argv[]) {
     exit(1);
   }
 
-  char formattedTotal[4096] = "\0";
+  char formattedTotal[8190] = "\0";
 
   // make array of questions
   char responses[7][253];
@@ -47,7 +47,7 @@ int main(int argc, char * argv[]) {
   // get user input
   for (int i = 0; i < 7; i++) {
     printf("%s", questionsList[i]);
-    fgets(responses[i], 253, stdin);
+    fgets(responses[i], 1020, stdin);
 	system("clear");
   }
 
@@ -61,19 +61,19 @@ int main(int argc, char * argv[]) {
   // description
   strncat(formattedTotal, "<h2 align='center'>Description</h2>\n", 37);
   strncat(formattedTotal, "<p align='center'>", 19);
-  strncat(formattedTotal, responses[1], 253);
+  strncat(formattedTotal, responses[1], 1020);
   strncat(formattedTotal, "</p>", 5);
   strncat(formattedTotal, "\n", 2);
   // installation
   strncat(formattedTotal, "<h2 align='center'>Installation</h2>\n", 38);
   strncat(formattedTotal, "<p align='center'>", 19);
-  strncat(formattedTotal, responses[2], 253);
+  strncat(formattedTotal, responses[2], 1020);
   strncat(formattedTotal, "</p>", 5);
   strncat(formattedTotal, "\n", 2);
   // usage
   strncat(formattedTotal, "<h2 align='center'>Usage</h2>\n", 31);
   strncat(formattedTotal, "<p align='center'>", 19);
-  strncat(formattedTotal, responses[3], 253);
+  strncat(formattedTotal, responses[3], 1020);
   strncat(formattedTotal, "</p>", 5);
   strncat(formattedTotal, "\n", 2);
 
@@ -102,7 +102,7 @@ int main(int argc, char * argv[]) {
   char *iscCheck = "ISC";
   if (argv[2]) {
      strncat(formattedTotal, "-", 2);
-     strncat(formattedTotal, argv[2], 10);
+     strncat(formattedTotal, argv[2], 18);
      strncat(formattedTotal, "'", 2);
   }
   else if (strcasestr(lic, mitCheck) != NULL) {
@@ -127,7 +127,7 @@ int main(int argc, char * argv[]) {
   strncat(formattedTotal, "<h2 align='center'>Questions</h2>\n", 35);
   strncat(formattedTotal, "<p align='center'>", 19);
   strncat(formattedTotal, "Any questions on this or other projects can be directed to ", 64);
-  strncat(formattedTotal, responses[5], 253);
+  strncat(formattedTotal, responses[5], 1020);
   strncat(formattedTotal, "</p>", 5);
   strncat(formattedTotal, "\n", 2); 
   // github
